@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 const ListingDisplay = (props) => {
@@ -7,13 +7,13 @@ const ListingDisplay = (props) => {
       if (listData.length > 0) {
         return listData.map((item) => {
           return (
-            <div className="item" key={item.restaurant.id}>
+            <div className="item" key={item.restaurant_id}>
               <div className="row">
                 <div className="col-md-5">
                   <img
                     className="Image"
                     alt={item.restaurant_name}
-                    src={item.restaurant_thump}
+                    src={item.restaurant_thumb}
                   />
                 </div>
                 <div className="col-md-7">
@@ -49,23 +49,19 @@ const ListingDisplay = (props) => {
           );
         });
       } else {
-        return <h2>No data For filter</h2>;
+        return <h2>No Data Found For Filter</h2>;
       }
     } else {
       return (
         <div>
           <img src="/images/loader.gif" alt="loader" />
-          <h2>loading....</h2>
+          <h2>loading.....</h2>
         </div>
       );
     }
   };
 
-  return (
-    <>
-      <div id="content">{renderData(props)}</div>
-    </>
-  );
+  return <div id="content">{renderData(props)}</div>;
 };
 
 export default ListingDisplay;

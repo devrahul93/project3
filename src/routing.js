@@ -12,7 +12,7 @@ const Routing = () => {
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/list/:id" component={ListingApi} />
+        <Route exact path="/list/:mealId" component={ListingApi} />
         <Route path="*" component={NotFound} />
       </Switch>
 

@@ -39,7 +39,6 @@ class Search extends Component {
   };
 
   handleCity = (event) => {
-    console.log(event.target.value);
     const cityId = event.target.value;
     fetch(`${restUrl}${cityId}`, { method: "GET" })
       .then((res) => res.json())
@@ -48,7 +47,6 @@ class Search extends Component {
       });
   };
   render() {
-    console.log(">>>", this.state);
     return (
       <div className="search">
         <div id="logo">
